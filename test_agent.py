@@ -2,7 +2,7 @@
 
 import carla
 import time
-from symbolic_agent import SymbolicAgent  # ✅ Import your custom logic
+from symbolic_agent import SymbolicAgent  # custom logic
 
 client = carla.Client('localhost', 2000)
 client.set_timeout(10.0)
@@ -23,7 +23,7 @@ agent = SymbolicAgent(vehicle,world)
 print("Vehicle is driving using SymbolicAgent logic...")
 
 try:
-    for _ in range(1200):  # Run for ~60 seconds (20 FPS)
+    for _ in range(1200):  
         control = agent.run_step()
         vehicle.apply_control(control)
         time.sleep(0.05)
